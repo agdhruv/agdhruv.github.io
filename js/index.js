@@ -11,11 +11,11 @@ $.getJSON('/js/projects.json', (data) => {
 		var HTMLString = '';
 
 		// generate HTML string to append from ex-JSON Object
-		HTMLString += '<article class="project">';
+		HTMLString += '<article class="project" data-project-no="' + i + '">';
 		HTMLString += '<h2 class="name">' + projects[i]['name'] + '</h2>';
 		HTMLString += '<p class="stack">Stack: ' + projects[i]['stack'] + '</p>';
 		HTMLString += '<p class="description">' + projects[i]['description'] + '</p>';
-		// HTMLString += '<a target="_blank" href="' + projects[i]['link'] + '" class="link">Link</a>';
+		HTMLString += '<a target="_blank" href="' + projects[i]['link'] + '" class="link">Link</a>';
 		HTMLString += '</article>';
 
 		// append generated HTML string to respective element
@@ -23,7 +23,7 @@ $.getJSON('/js/projects.json', (data) => {
 	}
 });
 	
-// rest of the DOM logic in a self-invoking anonymour function to avoid global variables
+// rest of the DOM logic in a self-invoking anonymous function to avoid global variables
 (function() {
 
 	$('.scroll-chevron').click(function() {
