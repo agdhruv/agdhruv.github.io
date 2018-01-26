@@ -4,19 +4,20 @@
 			"name": "Ashoka Bot",
 			"description": "A Messenger bot I developed as a weekend hack to give Ashoka University users information about mess menu, shuttle timings and important phone numbers. The bot has received and sent over 80k messages to over 600 unique users since it was started in March 2017.",
 			"stack": "Python (+ Flask), Facebook APIs",
-			"link": "#"
+			"thumbnail": "img/ashoka-bot.png",
+			"link": "https://github.com/agdhruv/shuttle-bot"
 		},
 		{
 			"name": "Energy Monitoring System",
 			"description": "We developed a device that could be placed in dorm rooms at Ashoka to monitor wastage of energy. We used multiple sensors to detect whether energy was being wasted in the form of unnecessary use of lights and AC, and displayed the information on a user-friendly web app.",
 			"stack": "Arduino, Raspberry Pi, Python (+ Flask), MySQL",
-			"link": "#"
+			"thumbnail": "img/energy-monitoring.png"
 		},
 		{
 			"name": "Banjaara Website",
 			"description": "I designed and developed this website for my university's inaugural cultural fest. The website received over 10k hits in the month leading to the fest and was highly appreciated by everyone.",
 			"stack": "HTML, CSS, JavaScript (+ jQuery), PHP",
-			"link": "#"
+			"thumbnail": "img/banjaara.png"
 		}
 	]
 }
