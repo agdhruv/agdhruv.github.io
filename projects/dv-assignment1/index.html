@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Defence Land and Employment - Data Visualization</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		body {
+			background: #fbffed;
+		}
+
+
+		h1.page {
+			font-size: 25px;
+			text-align: center;
+			font-family: 'Roboto Slab', sans-serif;
+			padding: 30px;
+			color: #505050;
+		}
+
+		div.circle-packings {
+			display: flex;
+		}
+
+			div.pack {
+				flex: 1 1 50%;
+			}
+
+			div.pack h2 {
+				text-align: center;
+				font-size: 18px;
+				margin-bottom: 20px;
+				font-family: 'Roboto Slab', sans-serif;
+			}
+
+			div.pack img {
+				margin: 0px auto;
+				max-width: 70%;
+				display: block;
+				margin-bottom: 20px;
+			}
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script>
+		var labels = [ 'A AND N ISLANDS','ANDHRA PRADESH AND TELANGANA','ARUNACHAL PRADESH','ASSAM','BIHAR','CHANDIGARH','CHHATISGARH','DADARA & NAGAR HAVELI','DAMAN & DIU','DELHI','GOA','GUJARAT','HARYANA','HIMACHAL PRADESH','JAMMU AND KASHMIR','JHARKHAND','KARNATAKA','KERALA','LAKSHADWEEP','MADHYA PRADESH','MAHARASHTRA','MANIPUR','MEGHALAYA','MIZORAM','NAGALAND','ODISHA','PONDICHERRY','PUNJAB','RAJASTHAN','SIKKIM','TAMIL NADU','TRIPURA','UTTAR PRADESH','UTTRANCHAL','WEST BENGAL'];
+		var land = [ 0.401, 0.099, 0.023, 0.132, 0.051, 0.626, 0.005, 0, 0.708, 3.171, 0.331, 0.051, 0.341, 0.059, 0.041, 0.039, 0.07, 0.055, 0.504, 0.303, 0.183, 0.023, 0.073, 0, 0.013, 0.047, 0.015, 0.629, 0.971, 0.176, 0.066, 0.103, 0.205, 0.206, 0.187];
+		var servicemen = [ 0.026711692, 3.436945568, 0.021806304, 1.396798884, 4.067267295, 0.411557918, 0.217114939, 0, 0, 1.805842276, 0.08495802, 1.051690421, 11.14025947, 4.492840607, 2.992204143, 0.919822054, 3.041670239, 6.887205759, 0, 1.789477242, 7.004811402, 0.281668195, 0.098066535, 0.237560926, 0.105527671, 1.463372005, 0.072715161, 11.21705558, 6.859463524, 0.048724104, 5.068378633, 0.104126132, 13.16214492, 7.268630581, 3.223581807];
+	</script>
+</head>
+<body>
+	
+	<div class="my-container">
+		<h1 class="page">
+			Comparison between<br><u>percentage of land under the Defence Ministry</u><br>and<br><u>number of Defence servicemen by state</u>.
+		</h1>
+
+		<canvas id="myChart"></canvas>
+
+		<div class="circle-packings">
+			<div class="pack">
+				<h2>% of land under Defence Ministry</h2>
+				<img src="defence_land_percentage.svg" alt="">
+			</div>
+			<div class="pack">
+				<h2>% of ex-servicemen in the Defence</h2>
+				<img src="people_in_defence.svg" alt="">
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var mixedChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				datasets: [{
+					label: '% of Defence ex-servicemen by state',
+					data: servicemen,
+					backgroundColor: 'rgba(0, 0, 0, 0)',
+					borderColor: 'rgb(44, 116, 232)',
+					type: 'line'
+				}, {
+					label: '% of land under Defence by state',
+					data: land,
+					backgroundColor: 'rgb(255, 99, 132)',
+			        borderColor: 'rgb(255, 99, 132)'
+				}],
+				labels: labels
+			},
+			options: {
+				scales: {
+					xAxes: [{
+						ticks: {
+						    autoSkip: false,
+						    maxRotation: 80,
+						    minRotation: 80
+						}
+					}]
+				}
+			}
+		});
+	</script>
+</body>
+</html>
