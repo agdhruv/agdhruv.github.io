@@ -1,6 +1,13 @@
 {
 	"projects": [
 		{
+			"name": "Thor: Online Code Judge",
+			"description": "An online code judge (like CodeChef) intended to be used for programming contests within my University. This platform was eventually used by the instructor for programming assignment submissions in the CS101 course in Spring 2016.",
+			"stack": "Python (+ Flask), PHP, MySQL",
+			"thumbnail": "img/thor.png",
+			"link": "https://github.com/agdhruv/thor"
+		},
+		{
 			"name": "Ashoka Bot",
 			"description": "A Messenger bot I developed as a weekend hack to give Ashoka University users information about mess menu, shuttle timings and important phone numbers. The bot has received and sent over 80k messages to over 600 unique users since it was started in March 2017.",
 			"stack": "Python (+ Flask), Facebook APIs",
