@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Prison Escapes in India (2015)</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	
+	<div class="my-container">
+	
+		<h2 class="main-heading text-center">Prison Escapes In India (2015): A Visualization</h2>
+		
+		<article class="abstract">
+			<p>
+				In this visualisation, I will take you through the journey of how I came up with a <span class="bold">correlation between the number of prison escapes in a state/union territory and the prison occupancy</span> and their geographical distribution. The visualization makes use of the <a class="anchor-style" href="http://ncrb.gov.in/StatPublications/PSI/psimainpage.htm" target="_blank">Prison Statistics India</a> report published by National Crime Records Bureau (NCRB) of the Ministry of Home Affairs, Government of India.
+			</p>
+		</article>
+
+		<article>
+			<h4 class="heading">
+				Number of Escapes from Prisons In India
+			</h4>
+			<p>
+				I wanted to start simple. I was curious to know if there was anything intersting in the geographic distribution of the number of prison escapes. Was the number higher in states bordering Pakistan and/or China? Was the number higher in the North Eastern states given the mountaineous terrain (and hence easy hiding spots for escaped prisoners)?<br>
+				The most visually appealing way to plot this information would be by using different shades of the same color&mdash;darkers means more and lighter means less. I used the <a href="https://viz.socialcops.com">Social Cops</a> geovisualization tool to plot the raw information on the map of India.
+			</p>
+			<iframe style="border: none;" src="https://viz.socialcops.com/embed/5ac0b36415e7187c15cbbf8b/1" name="Number of Escapes from Prisons" scrolling="no"></iframe>
+			<p>
+				This visualization seemed to suggest that larger states had more prison escapes. Looks like I was wrong in plotting this information in its raw state. Shouldn't it be obvious that states with more population will have more prisoners, and hence more escapes?
+			</p>
+		</article>
+
+		<article>
+			<h4 class="heading">
+				Percentage of Inmates that Escaped Prisons
+			</h4>
+			<p>
+				I realised that it might make more sense to get data on the number of prisoners (i.e., the number of inmates) per state/UT, and use that to find the percentage of prisoners that escaped prisons in that state. Thankfully, this data was also available in the same data set, which ensured the same degree of correctness of data. Maybe the questions that I expected the previous map to answer would be answered by this one more appropriately.
+			</p>
+			<iframe style="border: none;" src="https://viz.socialcops.com/embed/5ac0b5c70265ee1eee1b8867/1" name="Percentage of Inmates that Escaped" scrolling="no"></iframe>
+			<p>
+				Clearly, the results were more or less the same. However, the dependence of the number of escapes on the size of a state seemed absurd. Maybe this result was just a co-incidence. I wanted to go more in-depth, so I stared at the humongous data-set I had and gave it some more thought.
+			</p>
+		</article>
+
+		<article>
+			<h4 class="heading">
+				Escapes Per Prison
+			</h4>
+			<p>
+				Soon enough, I realised that the dependence of the number of escapes should be on the number of <span class="bold">prisons</span>, more than on the number of prisoners. Why? <span class="bold">Because a prisoner is never <span class="italic">free</span> to escape</span>. Their successful escape depends on the negligience of prison authorities. And the prison authorities are the same for a particular prison. With this thought, I got data for the number or prisons per state, and plotted the number of escapes per prison.
+			</p>
+			<iframe style="border: none;" src="https://viz.socialcops.com/embed/5ac0d94a39b20e629b484566/1" name="Escapes Per Prison" scrolling="no"></iframe>
+			<p>
+				This visualization showed that most of the north-eastern states had more prison escapes per prison. This could be because of the terrain in that area could hinder complete security of the inmates.<br>
+				I seemed to be going in the right direction. But what next? This geo-visualization showed no other interesting geographic trends. Even the correlation between escapes and size of states was partially lost. This seemed like a deadend.
+			</p>
+		</article>
+
+		<article>
+			<h4 class="heading">
+				Using the Prison Occupancy Rate
+			</h4>
+			<p>
+				I went back to an assumption that I made in the previous step. Was it completely fair to blame prison escapes on the negligience of prison authorities? A good percentage of them are trained to handle prisoners, after all. Instead, <span class="bold">could the number of guards be the problem</span>? This led me to prison occupancy rate. It could be the case that prisons had more inmates than what they could accommodate. If this was a factor, then lower occupancy rate would mean lesser prison escapes.
+			</p>
+			<p>
+				It would make no sense to geo-visualise the occupancy of prisons across India, since that was not something I was looking for a result on. So I used a bar chart since length would be the best to show comparison between the two quantities.
+			</p>
+			<canvas id="myChart"></canvas>
+			<p>
+				Finally, I got something interesting! As can be seen above, <span class="bold">there are higher green bars on the right side of the graph</span>.This validates the hypothesis that lower occupancy rate means lesser prison escapes.<br>
+				But why did I use absolute values of prison escapes here, why not use percentage of prisoners escaped or escapes per perison? I decided to do this because the quantity "prison occupancy" already takes into account the number of inmates in some sense. Further, since each prison has its own fixed number of staff, it is not a deciding factor&mdash;what matters is that the occupancy is more (or less) than what that staff can manage.
+			</p>
+		</article>
+		
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script>
+		var labels = ["Daman & Diu", "Nagaland", "Lakshadweep", "Goa", "A & N Islands", "Puducherry", "Tripura", "Chandigarh", "Tamilnadu", "Manipur", "Bihar", "Jammu & Kashmir", "Arunachal Pradesh", "Telangana", "Odisha", "Andhra Pradesh", "Mizoram", "Gujarat", "Karnataka", "Sikkim", "Rajasthan", "West Bengal", "Haryana", "Assam", "Himachal Pradesh", "Maharashtra", "Jharkhand", "Punjab", "Kerala", "Uttarakhand", "Madhya Pradesh", "Uttar Pradesh", "Meghalaya", "Delhi", "Chhattisgarh", "D & N Haveli"];
+		var occupancy = [28.8, 33.8, 37.5, 38.6, 40, 45.9, 47.8, 61.4, 63.6, 67.1, 75.2, 77.9, 86.8, 87.8, 88.6, 88.9, 94.9, 95.5, 95.9, 99.2, 102.4, 102.9, 109.3, 109.7, 110.7, 112.8, 114.3, 117.8, 118.3, 136.4, 139.8, 168.8, 177.9, 226.9, 233.9, 276.7];
+		var occupancyPer10 = [];
+		for (var i = 0; i < occupancy.length; i++) {
+			occupancyPer10.push((occupancy[i]/10).toFixed(2));
+		}
+		var escapes = [0, 2, 0, 0, 1, 0, 0, 8, 8, 0, 8, 1, 4, 3, 7, 23, 5, 28, 17, 0, 33, 11, 6, 13, 6, 29, 0, 32, 7, 8, 23, 53, 6, 2, 27, 0];
+
+		var ctx = document.getElementById("myChart").getContext('2d');
+
+		var barChart = new Chart(ctx, {
+					type: 'bar',
+					data: {
+						datasets: [{
+							label: 'Prison Occupancy Per 10 People',
+							backgroundColor: 'rgb(255, 99, 132)',
+							borderColor: 'rgb(255, 99, 132)',
+							data: occupancyPer10
+						}, {
+							label: 'Number of prison escapes',
+							backgroundColor: 'rgb(80, 244, 66)',
+							borderColor: 'rgb(80, 244, 66)',
+							data: escapes
+						}],
+						labels: labels
+					},
+					options: {
+						scales: {
+							xAxes: [{
+								ticks: {
+								    autoSkip: false,
+								    maxRotation: 80,
+								    minRotation: 80
+								}
+							}]
+						}
+					}
+				});
+
+		
+	</script>
+</body>
+</html>
