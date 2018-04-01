@@ -14,7 +14,8 @@ body {
 div.my-container {
 	margin: 0px auto;
 	max-width: 80%;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	padding: 5%;
 
 	background: #fff;
@@ -68,12 +69,12 @@ canvas {
 	font-style: italic;
 }
 
-a.anchor-style {
+a.anchor {
 	color: #224ade;
 	text-decoration: none;
 }
 
-	a.anchor-style:hover {
+	a.anchor:hover {
 		text-decoration: none;
 		color: #224ade;
 	}

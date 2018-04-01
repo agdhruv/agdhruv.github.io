@@ -11,11 +11,15 @@
 	
 	<div class="my-container">
 	
-		<h2 class="main-heading text-center">Prison Escapes In India (2015): A Visualization</h2>
+		<h2 class="main-heading text-center">Prison Escapes In India (2015): A Visualization<br><small>Dhruv Agarwal</small></h2>
+
 		
 		<article class="abstract">
 			<p>
-				In this visualisation, I will take you through the journey of how I came up with a <span class="bold">correlation between the number of prison escapes in a state/union territory and the prison occupancy</span> and their geographical distribution. The visualization makes use of the <a class="anchor-style" href="http://ncrb.gov.in/StatPublications/PSI/psimainpage.htm" target="_blank">Prison Statistics India</a> report published by National Crime Records Bureau (NCRB) of the Ministry of Home Affairs, Government of India.
+				In this visualisation, I will take you through the journey of how I came up with a correlation between the number of prison escapes in a state/union territory and the prison occupancy. <span class="bold">The hypothesis that I validated through this visualization is that prison escapes in India are not due to the negligience of local prison authorities, but due to the negligience of authorities higher up in the ladder.</span>
+			</p>
+			<p>
+				Source: The visualization makes use of the <a class="anchor" href="http://ncrb.gov.in/StatPublications/PSI/psimainpage.htm" target="_blank">Prison Statistics India</a> report published by National Crime Records Bureau (NCRB) of the Ministry of Home Affairs, Government of India.
 			</p>
 		</article>
 
@@ -25,7 +29,7 @@
 			</h4>
 			<p>
 				I wanted to start simple. I was curious to know if there was anything intersting in the geographic distribution of the number of prison escapes. Was the number higher in states bordering Pakistan and/or China? Was the number higher in the North Eastern states given the mountaineous terrain (and hence easy hiding spots for escaped prisoners)?<br>
-				The most visually appealing way to plot this information would be by using different shades of the same color&mdash;darkers means more and lighter means less. I used the <a href="https://viz.socialcops.com">Social Cops</a> geovisualization tool to plot the raw information on the map of India.
+				The most natural visually appealing way to plot this information would be by using different shades of the same color&mdash;darker means more and lighter means less. I used the <a class="anchor" href="https://viz.socialcops.com" target="_blank">Social Cops</a> geovisualization tool to plot the raw information on the map of India.
 			</p>
 			<iframe style="border: none;" src="https://viz.socialcops.com/embed/5ac0b36415e7187c15cbbf8b/1" name="Number of Escapes from Prisons" scrolling="no"></iframe>
 			<p>
@@ -65,15 +69,17 @@
 				Using the Prison Occupancy Rate
 			</h4>
 			<p>
-				I went back to an assumption that I made in the previous step. Was it completely fair to blame prison escapes on the negligience of prison authorities? A good percentage of them are trained to handle prisoners, after all. Instead, <span class="bold">could the number of guards be the problem</span>? This led me to prison occupancy rate. It could be the case that prisons had more inmates than what they could accommodate. If this was a factor, then lower occupancy rate would mean lesser prison escapes.
+				I went back to an assumption that I made in the previous step. Was it completely fair to blame prison escapes on the negligience of prison authorities? A good percentage of them are trained to handle prisoners, after all. Instead, <span class="bold">could the number of guards be the problem</span>? This led me to prison occupancy rate. It could be the case that prisons had more inmates than what they could accommodate. If this was a factor, then higher occupancy rate would mean more prison escapes.
 			</p>
 			<p>
 				It would make no sense to geo-visualise the occupancy of prisons across India, since that was not something I was looking for a result on. So I used a bar chart since length would be the best to show comparison between the two quantities.
 			</p>
 			<canvas id="myChart"></canvas>
 			<p>
-				Finally, I got something interesting! As can be seen above, <span class="bold">there are higher green bars on the right side of the graph</span>.This validates the hypothesis that lower occupancy rate means lesser prison escapes.<br>
-				But why did I use absolute values of prison escapes here, why not use percentage of prisoners escaped or escapes per perison? I decided to do this because the quantity "prison occupancy" already takes into account the number of inmates in some sense. Further, since each prison has its own fixed number of staff, the number of prisons itself is not a deciding factor&mdash;what matters is whether the occupancy is more (or less) than what that staff can manage.
+				Finally, I got something interesting! As can be seen above, <span class="bold">there are higher green bars on the right side of the graph</span>. This validated the claim that higher occupancy rate meant higher prison escapes, and also validated my hypothesis. <span class="bold">The problem of prison escapes is not due to negligience of local prison authorities, but due to the inavailability of enough prisons and inavailability of enough staff in existing prisons&mdash;both of which are faults of higher authorities.</span>
+			</p>
+			<p>
+				But why did I use absolute values of prison escapes here? Why not use percentage of prisoners escaped or escapes per perison? I decided to do this because the quantity "prison occupancy" already takes into account the number of inmates in some sense. Further, since each prison has its own fixed number of staff, the number of prisons itself is not an influencing factor&mdash;what matters is whether the occupancy is more (or less) than what that staff can manage.
 			</p>
 		</article>
 		
