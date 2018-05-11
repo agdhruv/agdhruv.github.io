@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div.container {
+    height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+}
+    
+    div.extra-information {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        background: white;
+        width: 0%;
+        overflow: hidden;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .map {
+        position: relative;
+        flex: 1 1 70%;
+    }
+
+    #map {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #map img {
+        max-width: 100%;
+        display: none;
+    }
+
+    div.information {
+        flex: 1 1 30%;
+        overflow-y: scroll;
+    }
+
+    div.information article {
+        display: flex;
+        align-items: center;
+        min-height: 100%;
+        opacity: 0.5;
+        background: #eaeaea;
+    }
+        
+        div.information article section {
+            box-sizing: border-box;
+            padding: 3% 10%;
+            line-height: 2;
+            font-family: 'Lato', sans-serif;
+            color: #717171;
+            font-size: 19px;
+        }
+
+        div.information article section h2 {
+            font-family: 'Merriweather', serif;
+            color: #5e16e2;
+            margin-bottom: 3%;
+        }
+
+            div.information article section ul li {
+                margin-left: 20px;
+            }
+
+    div.information article.active {
+        transition: 0.2s linear opacity;
+        opacity: 1;
+    }
+
+    article table tr, article table td, article table th{
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    article table td:first-child {
+        text-align: left;
+    }
+
+    article table td, article table th {
+        padding: 5px;
+    }
+
+a {
+    text-decoration: none;
+    color: #5e16e2;
+}
+
+/* Helper classes */
+
+span.purple-underline {
+    position: relative;
+}
+
+span.purple-underline:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #5e16e2;
+    top: 22px;
+    left: 0px;
+}
+
+span.font-blue {
+    color: rgb(52, 129, 223);
+}
+
+span.font-red {
+    color: rgb(243, 68, 68);
+}
+
+span.bold {
+    font-weight: 800;
+}

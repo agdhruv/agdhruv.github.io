@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title>ScrollyTelling</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href='main.css' rel='stylesheet' />
+</head>
+<body>
+
+    <div class="container">
+        <div class="map">
+            <div id='map'>
+                <img src="img/part-0.jpg" alt="" style="display: block;">
+                <img src="img/part-1.jpg" alt="">
+                <img src="img/part-2.jpg" alt="">
+                <img src="img/part-3.jpg" alt="">
+                <img src="img/part-4.jpg" alt="">
+                <img src="img/part-5.jpg" alt="">
+                <img src="img/part-6.jpg" alt="">
+                <img src="img/part-7.jpg" alt="">
+                <img src="img/part-8.jpg" alt="">
+                <img src="img/part-9.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="information" id="scroll">
+            
+            <article id="part-0" class="active">
+                <section>
+                    <h2>What is this about?</h2>
+                    <p>
+                        The stream of photographs below narrates a story about the life of soldiers involved in the United Nations Peacekeeping Mission (MONUC) in Congo. The photos are also accompanied by some quotes from my father, who was posted at the heart of the conflict in 2006-2007.
+                    </p>
+                    <p style="text-align: center;">
+                        <small>
+                            <a href="javascript: void(0);">Scroll on this side of the page.</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-1">
+                <section>
+                    <h2>On killing of local Congolese people</h2>
+                    <p>
+                        "It wasn't us, but the rebel army that was killing people. There were some collateral casualties and deaths in cross-firing, but that was always in the larger interest—never intentional. In my 13 months at Congo, there was not even once instance when the local civilians were harmed for the cause of the UN Peacekeepers."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://africasustainableconservation.com/2013/11/03/drc-m23-declares-a-ceasefire-after-defeats/">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-2">
+                <section>
+                    <h2>On obeying orders</h2>
+                    <p>
+                        "In order to obey the orders of senior UN officials, we sometimes had to open fire on the rebel army (who were also civilians) against our wishes. But that is how we're trained. We have to follow orders, irrespective of our personal opinions, come what may."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://www.justiceinfo.net/en/justice-reconciliation/3029-drc-and-the-difficulties-of-returning-m23-rebels-to-civilian-life.html">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-3">
+                <section>
+                    <h2>On having personal views</h2>
+                    <p>
+                        "Most of us at the UN camp had our own views of the political situation. But we only discussed them at informal meetings. Having our own views didn't mean we could follow them. As a part of a professional force, a soldier has to follow orders for the larger cause."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://www.hindustantimes.com/india-news/how-lt-gen-bipin-rawat-changed-the-face-of-un-peacekeeping-in-conflict-hit-congo/story-RLHFqcvPhzvZzeLdiL1u8M.html">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-4">
+                <section>
+                    <h2>On human rights</h2>
+                    <p>
+                        "We used to go for scheduled routine walks on the air-strip. The rebels used to hide in the corner waiting for us, and open fire on us. Human rights violations is a relative term. What about the human rights of the soldiers and the common people that they were taking away?"
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="http://asian-defence-news.blogspot.in/2018/02/indian-army-troops-serving-in-un.html">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-5">
+                <section>
+                    <h2>On collateral damage</h2>
+                    <p>
+                        "Organized violence is an extreme situation. And extreme situations sometimes require extreme solutions. It is not possible for any fighting force in the world to ensure that there is absolutely zero collateral in preventing organized violence. If some civilians are killed, yes, it is violation of human rights. But it is impossible to eliminate that."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="http://allafrica.com/view/group/main/main/id/00026152.html">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-6">
+                <section>
+                    <h2>On hostile living conditions</h2>
+                    <p>
+                        "We had to stay away from our families for such long periods of time. We were constantly at a risk of being under attack by the rebels. They used to throw hand grenades into our residence camps. Such acts of terrorism were a reality for us on an everyday basis."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://www.usnews.com/news/world/articles/2017-12-08/large-number-of-un-peacekeepers-killed-in-congo-attack">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-7">
+                <section>
+                    <h2>On local people's view about the UN</h2>
+                    <p>
+                        "No no no, not at all. Except for the rebels who wanted control over the resources of Congo, most of the population was thankful to the UN troops for their peacekeeping efforts."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://www.flickr.com/photos/monusco/16978597009/in/photostream/">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-8">
+                <section>
+                    <h2>On living conditions in Congo</h2>
+                    <p>
+                        "Majority of the population of the country lived in extreme poverty. They survived on a single meal a day. In spite of having all the resources a country would want, the political instability led to huge economic disparity. The UN troops were aware and terrified of these living conditions."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://firstperson.oxfamamerica.org/2008/11/congos-troubles-are-closer-than-you-think/">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+            <article id="part-9">
+                <section>
+                    <h2>On their relationship with the locals</h2>
+                    <p>
+                        "We used to run schools for the local people, have regular medical camps, give them the whatever scarce ration we used to get. We had an emotional connect with the people of Congo. We were terrified to see their living conditions."
+                    </p>
+                    <p style="text-align: right;">
+                        <small>
+                            <a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/f/fd/The_Blue_Berets,_We_Care_(15847021980).jpg">Image Source</a>
+                        </small>
+                    </p>
+                </section>
+            </article>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src='main.js'></script>
+</body>
+</html>
