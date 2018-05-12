@@ -39,5 +39,5 @@ function isElementOnScreen(id) {
     var viewportTop = $(window).scrollTop();
     var viewportBottom = viewportTop + $(window).height();
 
-    return elementTop < viewportBottom/2 && elementBottom > 2*viewportTop;
+    return elementTop < (viewportBottom/2 + 70) && elementBottom > (2*viewportTop + 70);
 }
