@@ -1,11 +1,11 @@
 {
 	"projects": [
 		{
-			"name": "Thor: Online Code Judge",
-			"description": "An online code judge (like CodeChef) intended to be used for programming contests within my University. This platform was eventually used by the instructor for programming assignment submissions in the CS101 course in Spring 2016.",
-			"stack": "Python (+ Flask), PHP, MySQL",
-			"thumbnail": "img/thor.png",
-			"link": "https://github.com/agdhruv/thor"
+			"name": "VAHN: Vehicle Accident Hazard Notifier",
+			"description": "A real-time smart city system for automatic detection and reporting of road accidents, using a machine learning and vision algorithm, for reduced relief response time and avoiding chaining of accidents. Adjudged 5th best project out of 400 teams at HackIIIT-D 2018.",
+			"stack": "TF Object Detection API, Socket.io, Python, Node.js",
+			"thumbnail": "img/vahn.gif",
+			"link": "https://github.com/agdhruv/accident-monitoring"
 		},
 		{
 			"name": "Ashoka Bot",
@@ -19,6 +19,13 @@
 			"description": "We developed a device that could be placed in dorm rooms at Ashoka to monitor wastage of energy. We used multiple sensors to detect whether energy was being wasted in the form of unnecessary use of lights and AC, and displayed the information on a user-friendly web app.",
 			"stack": "Arduino, Raspberry Pi, Python (+ Flask), MySQL",
 			"thumbnail": "img/energy-monitoring.png"
+		},
+		{
+			"name": "Thor: Online Code Judge",
+			"description": "An online code judge (like CodeChef) intended to be used for programming contests within my University. This platform was eventually used by the instructor for programming assignment submissions in the CS101 course in Spring 2016.",
+			"stack": "Python (+ Flask), PHP, MySQL",
+			"thumbnail": "img/thor.png",
+			"link": "https://github.com/agdhruv/thor"
 		},
 		{
 			"name": "Banjaara Website",
