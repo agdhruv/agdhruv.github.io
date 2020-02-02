@@ -19,7 +19,7 @@ $.getJSON('/js/projects.json', (data) => {
 		else {
 			HTMLString += `<h2 class="name">${projects[i]['name']}</h2>`;
 		}
-		HTMLString += `<p class="stack">Stack: ${projects[i]['stack']}</p>`;
+		HTMLString += `<p class="stack">Keywords: ${projects[i]['keywords']}</p>`;
 		HTMLString += `<p class="description get-ellipsis">${projects[i]['description']}</p>`;
 		HTMLString += `<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>`;
 		HTMLString += `</article>`;

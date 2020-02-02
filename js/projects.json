@@ -1,37 +1,50 @@
 {
 	"projects": [
 		{
+			"name": "Fake News Challenge: Stance Detection",
+			"description": "Undertook the <a href='http://www.fakenewschallenge.org/'>Fake News Challenge<a> to distinguish between the following relationships between a news headline and an article body: unrelated, agree, disagree, discuss. We got comparable (if not better) results than winners of the competition (although we did break some rules of the competition!).",
+			"keywords": "NLP (TF-IDF, BoW), Keras, Python, SciPy stack",
+			"thumbnail": "img/projects/stance-detection.png"
+		},
+		{
+			"name": "Beating Facial Image Obfuscation",
+			"description": "A machine learning model (autoencoder) to beat common forms of facial obfuscation like blurring and pixelation. In addition, we defined another obfucation model, \"blocking\", to beat our model and hence show limitations of our model. We also tried generative models like GANs and variational autoencoders, which did not give good results for this task.",
+			"keywords": "Keras, Python, SciPy stack",
+			"thumbnail": "img/projects/reconstructing-obfuscations.png",
+			"link": "https://github.com/agdhruv/reconstructing-obfuscations"
+		},
+		{
 			"name": "VAHN: Vehicle Accident Hazard Notifier",
 			"description": "A real-time smart city system for automatic detection and reporting of road accidents, using a machine learning and vision algorithm, for reduced relief response time and avoiding chaining of accidents. Adjudged 5th best project out of 400 teams at HackIIIT-D 2018.",
-			"stack": "TF Object Detection API, Socket.io, Python, Node.js",
-			"thumbnail": "img/vahn.gif",
+			"keywords": "TF Object Detection API, Socket.io, Python, Node.js",
+			"thumbnail": "img/projects/vahn.gif",
 			"link": "https://github.com/agdhruv/accident-monitoring"
 		},
 		{
 			"name": "Ashoka Bot",
 			"description": "A Messenger bot I developed as a weekend hack to give Ashoka University users information about mess menu, shuttle timings and important phone numbers. The bot has received and sent over 80k messages to over 600 unique users since it was started in March 2017.",
-			"stack": "Python (+ Flask), Facebook APIs",
-			"thumbnail": "img/ashoka-bot.png",
+			"keywords": "Python (+ Flask), Facebook APIs",
+			"thumbnail": "img/projects/ashoka-bot.png",
 			"link": "https://github.com/agdhruv/shuttle-bot"
 		},
 		{
 			"name": "Energy Monitoring System",
 			"description": "We developed a device that could be placed in dorm rooms at Ashoka to monitor wastage of energy. We used multiple sensors to detect whether energy was being wasted in the form of unnecessary use of lights and AC, and displayed the information on a user-friendly web app.",
-			"stack": "Arduino, Raspberry Pi, Python (+ Flask), MySQL",
-			"thumbnail": "img/energy-monitoring.png"
+			"keywords": "Arduino, Raspberry Pi, Python (+ Flask), MySQL",
+			"thumbnail": "img/projects/energy-monitoring.png"
 		},
 		{
 			"name": "Thor: Online Code Judge",
 			"description": "An online code judge (like CodeChef) intended to be used for programming contests within my University. This platform was eventually used by the instructor for programming assignment submissions in the CS101 course in Spring 2016.",
-			"stack": "Python (+ Flask), PHP, MySQL",
-			"thumbnail": "img/thor.png",
+			"keywords": "Python (+ Flask), PHP, MySQL",
+			"thumbnail": "img/projects/thor.png",
 			"link": "https://github.com/agdhruv/thor"
 		},
 		{
 			"name": "Banjaara Website",
 			"description": "I designed and developed this website for my university's inaugural cultural fest. The website received over 10k hits in the month leading to the fest and was highly appreciated by everyone.",
-			"stack": "HTML, CSS, JavaScript (+ jQuery), PHP",
-			"thumbnail": "img/banjaara.png"
+			"keywords": "HTML, CSS, JavaScript (+ jQuery), PHP",
+			"thumbnail": "img/projects/banjaara.png"
 		}
 	]
 }
