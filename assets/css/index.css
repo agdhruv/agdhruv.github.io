@@ -11,15 +11,26 @@
 	--secondary-blue: #211ef9;
 }
 
+.text-my-blue {
+	color: var(--secondary-blue);
+}
+
 /* styling starts */
 
 html {
-	font-size: 15px;
-	font-family: var(--font-lato);
+	font-size: 16px;
 }
 
 body {
 	margin: var(--margin-window-size);
+}
+
+h1 {
+	font-family: var(--font-raleway);
+}
+
+a {
+	text-decoration: none;
 }
 
 /* main styling begins */
@@ -49,7 +60,6 @@ header.my-header .links {
 
 	header.my-header .links a {
 		color: #636363;
-		text-decoration: none;
 		transition: color 0.2s linear;
 	}
 
@@ -160,7 +170,6 @@ div.my-container .my-projects {
 		}
 
 		article.project a.link {
-			text-decoration: none;
 			font-size: 0.5rem;
 			padding-left: 0.5rem;
 			padding-right: 0.5rem;

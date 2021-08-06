@@ -1,0 +1,4 @@
+collections:
+  papers:
+    output: true
+    permalink: /:collection/:slug:output_ext
