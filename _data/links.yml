@@ -13,3 +13,7 @@
 - title: Resume
   href: files/Dhruv_Agarwal_Resume.pdf
   fontawesome_class: far fa-file-pdf
+
+- title: Google Scholar
+  href: https://scholar.google.com/citations?user=aLAvTzUAAAAJ&hl=en
+  fontawesome_class: fas fa-graduation-cap

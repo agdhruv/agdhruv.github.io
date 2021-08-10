@@ -232,11 +232,11 @@ div.my-container .my-projects {
 	}
 
 	html {
-		font-size: 22px;
+		font-size: 14px;
 	}
 
 	:root {
-		--margin-window-size: 20px;
+		--margin-window-size: 10px;
 	}
 
 	article.project h2.thumbnail {
