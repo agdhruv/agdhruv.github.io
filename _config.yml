@@ -1,4 +1,4 @@
 collections:
   papers:
-    output: true
+    output: false
     permalink: /:collection/:slug:output_ext

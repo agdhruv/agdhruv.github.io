@@ -35,7 +35,7 @@
 				<div class="links">
 					{% for link in site.data.links %}
 					<a href="{{ link.href }}" title="{{ link.title }}">
-						<i class="{{ link.fontawesome_class }} mx-3"></i>
+						<i aria-hidden="true" class="{{ link.fontawesome_class }} mx-3"></i>
 					</a>
 					{% endfor %}
 				</div>
@@ -63,49 +63,39 @@
 			</div>
 			
 		</section>
+		
+		<section class="row pb-4">
+			
+			<div class="col-12">
+				<h1 class="text-center mb-4">Past Projects</h1>
+			</div>
+			
+			<div class="col-12 my-projects">
+				{% assign projects = site.data.projects | where:"display", true %}
+				{% for project in projects %}
+				<article class="project" data-project-no="{{ forloop.index }}">
+
+					<h2 class="thumbnail" style="background-image: url({{ project.thumbnail }})"></h2>
+			
+					
+					<h2 class="name">{{ project.name }}
+						{% if project.link %}
+						<a target="_blank" href="{{project.link}}" class="link">
+							<i class="fas fa-external-link-alt" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+					</h2>
+				
+					<p class="stack">{{ project.keywords }}</p>
+					<p class="description get-ellipsis">{{ project.description }}</p>
+					<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>
+				</article>
+				{% endfor %}
+			</div>
+
+		</section>
 
 	</div>
-
-	{%- comment -%} <div class="my-container">
-
-		<section class="my-introduction">
-			
-			
-			
-
-			<div class="about-me">
-				I am a Research Fellow at Microsoft Research India where I work with <a href="https://scholar.google.com/citations?user=2WvQ1ZsAAAAJ&hl=en">Srinivasan Iyengar</a>.
-				<br>
-				My broad research interests are in HCI and Sensing.
-			</div>
-		</section>
-	
-		<section class="my-section my-projects">
-
-			<h1 class="section-heading">
-				Work
-			</h1>
-
-			{% for project in site.data.projects %}
-			<article class="project" data-project-no="{{ forloop.index }}">
-
-				<h2 class="thumbnail" style="background-image: url({{ project.thumbnail }})"></h2>
-		
-				{% if project.link %}
-				<h2 class="name">{{ project.name }}<a target="_blank" href="{{ project.link }}" class="link"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a></h2>
-				{% else %}
-				<h2 class="name">{{ project.name }}</h2>
-				{% endif %}
-			
-				<p class="stack">Keywords: {{ project.keywords }}</p>
-				<p class="description get-ellipsis">{{ project.description }}</p>
-				<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>
-			</article>
-			{% endfor %}
-
-		</section>
-
-	</div>	 {%- endcomment -%}
 
 
 	<!-- import jQuery -->
