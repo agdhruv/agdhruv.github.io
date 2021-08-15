@@ -1,4 +1,40 @@
+plugins:
+  - jekyll-seo-tag
+
 collections:
   papers:
     output: false
     permalink: /:collection/:slug:output_ext
+
+# --- SEO ---
+
+tagline: Personal website of Dhruv Agarwal
+description: "Dhruv Agarwal is a researcher interested in human-computer interaction, applied AI/ML, and
+sensing. He graduated with a Bachelor's degree in Computer Science from Ashoka University in 2020."
+logo: &logo /img/logo.png
+
+# Logo is weird, needs to be set as a site-wide default
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: *logo
+
+author:
+  twitter: &twitter agdhruv
+
+twitter:
+  username: *twitter
+  card: summary
+
+facebook:
+  publisher: https://facebook.com/agdhruv
+
+webmaster_verifications:
+  google: zrD-uBE3PiX6K7_miYRvKT3SC7pPJuxvXIhgH7kZLMY
+
+locale: en_US
+
+# --- SEO ends ---
+
+google_analytics: G-033ZGR8MHH
