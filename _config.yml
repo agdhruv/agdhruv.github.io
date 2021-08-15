@@ -6,12 +6,14 @@ collections:
     output: false
     permalink: /:collection/:slug:output_ext
 
+images_location: /assets/img
+
 # --- SEO ---
 
 tagline: Personal website of Dhruv Agarwal
 description: "Dhruv Agarwal is a researcher interested in human-computer interaction, applied AI/ML, and
 sensing. He graduated with a Bachelor's degree in Computer Science from Ashoka University in 2020."
-logo: &logo /img/logo.png
+logo: &logo /assets/img/logo.png
 
 # Logo is weird, needs to be set as a site-wide default
 defaults:

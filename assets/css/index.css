@@ -189,6 +189,9 @@ header.my-header .links {
 		grid-gap: 0.6rem 0rem;
 	}
 
+	article.project button.expand {
+		font-size: 1.5rem;
+	}
 }
 
 @media screen and (max-width: 499px) {
