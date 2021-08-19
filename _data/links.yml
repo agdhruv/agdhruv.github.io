@@ -1,0 +1,19 @@
+- title: Github
+  href: https://github.com/agdhruv
+  fontawesome_class: fab fa-github
+
+- title: LinkedIn
+  href: https://www.linkedin.com/in/agdhruv/
+  fontawesome_class: fab fa-linkedin-in
+
+- title: Email
+  href: mailto:dhruv.agarwal@alumni.ashoka.edu.in
+  fontawesome_class: far fa-envelope
+
+- title: Resume
+  href: files/Dhruv_Agarwal_Resume.pdf
+  fontawesome_class: far fa-file-pdf
+
+- title: Google Scholar
+  href: https://scholar.google.com/citations?user=aLAvTzUAAAAJ&hl=en
+  fontawesome_class: fas fa-graduation-cap

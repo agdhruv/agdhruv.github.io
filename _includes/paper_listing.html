@@ -1,0 +1,30 @@
+<!-- Contains the card for one paper -->
+<div class="card bg-transparent border-0">
+    <div class="row g-0">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card-body pt-0">
+                <h6 class="card-title m-0">
+                    {{ paper.title }}
+                    {% if paper.papertype %}
+                        [{{ paper.papertype }}]
+                    {% endif %}
+                </h6>
+                <p class="card-text m-0">{{ paper.authors | join: ", " }}</p>
+                <p class="card-text text-muted m-0">
+                    {{ paper.venue }}
+                    {% if paper.award %}
+                        | <span class="text-danger">{{ paper.award }}</span>
+                    {% endif %}
+                </p>
+                <p class="card-text m-0">
+                    {% for link in paper.links %}
+                        <small>
+                            <a href="{{link[1]}}">{{link[0]}}</a>
+                            {% unless forloop.last %} | {% endunless %}
+                        </small>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,83 +1,108 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- SEO tags -->
-	<meta name="description" content="Dhruv Agarwal is a computer science undergrad at Ashoka Univeristy, India.">
-	<meta name="keywords" content="dhruv, agarwal, designer, developer, ashoka, university, computer, science, web">
-	<meta property="og:image" content="img/favicon.png">
-	<meta property="og:title" content="Dhruv Agarwal">
-	<meta property="url" content="https://agdhruv.github.io">
-	<meta property="og:description" content="Dhruv Agarwal is a computer science undergrad at Ashoka Univeristy, India.">
-	<meta name="robots" content="index, follow">
-	<link rel="icon" href="img/favicon.png">
-	<title>Dhruv Agarwal</title>
+	
+	<link rel="icon" href="{{site.images_location}}/favicon.png">
+	<title>Dhruv Agarwal | Home</title>
+
 	<!-- import fontawesome fonts -->
 	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
-	<!-- import custom CSS file -->
-	<link rel="stylesheet" href="css/index.css">
+	<!-- import CSS files -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/index.css">
+
+	{% include google_analytics.html %}
+	
+	{% seo %}
 </head>
+
 <body>
-	
-	<div class="margin-window margin-window-top"></div>
-	<div class="margin-window margin-window-right"></div>
-	<div class="margin-window margin-window-bottom"></div>
-	<div class="margin-window margin-window-left"></div>
 
-	<section class="my-introduction">
-		<div class="welcome">
-			<h2>Hi! I'm</h2>
-			<h1>Dhruv<span class="bold">Agarwal</span></h1>
-		</div>
+	<div class="container-fluid">
 		
-		<div class="links">
-			<a target="_blank" href="https://github.com/agdhruv">
-				<i class="fab fa-github"></i>
-			</a>
-
-			<a target="_blank" href="https://www.linkedin.com/in/agdhruv/">
-				<i class="fab fa-linkedin-in"></i>
-			</a>
-
-			<a target="_blank" href="mailto:dhruv.agarwal_asp20@ashoka.edu.in">
-				<i class="far fa-envelope"></i>
-			</a>
+		<header class="row my-header py-4">
+			<div class="col text-center">
 			
-			<a target="_blank" href="files/Dhruv_Agarwal_Resume.pdf">
-				<i class="far fa-file-pdf"></i>
-			</a>
-		</div>
+				<div class="welcome">
+					<h2>Hi! I'm</h2>
+					<h1>Dhruv<span class="fw-normal">Agarwal</span></h1>
+				</div>
 
-		<div class="scroll-chevron" role="button">
-			<i class="fas fa-chevron-down"></i>
-		</div>
-	</section>
+				<div class="links">
+					{% for link in site.data.links %}
+					<a href="{{ link.href }}" title="{{ link.title }}">
+						<i aria-hidden="true" class="{{ link.fontawesome_class }} mx-3"></i>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+		</header>
 
-	<div class="my-container">
-	
-		<section class="my-section my-projects">
+		<section class="row my-about py-4">
+			<div class="col-md-4 text-center mb-4 mb-md-0">
+				<img src="{{site.images_location}}/me.jpeg" class="rounded w-50 mw-100" alt="Photograph of Dhruv Agarwal">
+			</div>
+			<div class="col-md-8">
+				<div class="pe-md-5">
+					{% include aboutme.html %}
+				</div>
+			</div>
+		</section>
 
-			<h1 class="section-heading">
-				Work
-			</h1>
+		<section class="row my-research py-4">
 
-			<!-- <article class="project" data-project-no="${i}">
-				<h2 class="thumbnail" style="background-image: url('${projects[i]['thumbnail']}')"></h2>
-				<h2 class="name">${projects[i]['name']}<a target="_blank" href="${projects[i]['link']}" class="link"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a></h2>
-				<p class="stack">Keywords: ${projects[i]['keywords']}</p>
-				<p class="description get-ellipsis">${projects[i]['description']}</p>
-				<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>
-			</article> -->
+			<div class="col">
+				<h1 class="text-center mb-4">Research</h1>
+				{% for paper in site.papers reversed %}
+					{% include paper_listing.html %}
+				{% endfor %}
+			</div>
+			
+		</section>
+		
+		<section class="row pb-4">
+			
+			<div class="col-12">
+				<h1 class="text-center mb-4">Past Projects</h1>
+			</div>
+			
+			<div class="col-12 my-projects">
+				{% assign projects = site.data.projects | where:"display", true %}
+				{% for project in projects %}
+				<article class="project" data-project-no="{{ forloop.index }}">
+
+					{% capture thumbnail_path %}{{site.images_location}}/{{project.thumbnail}}{% endcapture %}
+					<h2 class="thumbnail" style="background-image: url({{ thumbnail_path }})"></h2>
+			
+					
+					<h2 class="name">{{ project.name }}
+						{% if project.link %}
+						<a target="_blank" href="{{project.link}}" class="link">
+							<i class="fas fa-external-link-alt" aria-hidden="true"></i>
+						</a>
+						{% endif %}
+					</h2>
+				
+					<p class="stack">{{ project.keywords }}</p>
+					<p class="description get-ellipsis">{{ project.description }}</p>
+					<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>
+				</article>
+				{% endfor %}
+			</div>
 
 		</section>
 
-	</div>	
+	</div>
 
 
 	<!-- import jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- import custom js file -->
-	<script src="js/index.js"></script>
+	<script src="assets/js/index.js"></script>
 </body>
 </html>
