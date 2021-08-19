@@ -1,6 +1,6 @@
 [
 	{
-		"name": "Energy Monitoring System",
+		"name": "Energy Sensing System",
 		"description": "We developed a device that could be placed in dorm rooms at Ashoka to monitor wastage of energy. We used multiple sensors to detect whether energy was being wasted in the form of unnecessary use of lights and AC, and displayed the information on a user-friendly web app.",
 		"keywords": "Arduino, Raspberry Pi, Python (+ Flask), MySQL",
 		"thumbnail": "projects/energy-monitoring.png",
