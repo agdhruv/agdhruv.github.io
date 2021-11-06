@@ -18,20 +18,25 @@
 /* styling starts */
 
 html {
-	font-size: 16px;
+	font-size: 14px;
 }
 
 body {
 	margin: var(--margin-window-size);
 }
 
-h1 {
+h1, h5 {
 	font-family: var(--font-raleway);
 }
 
 a {
 	text-decoration: none;
 	color: #0c56c3;
+}
+
+hr {
+	margin: 0.5em 0;
+	background-color: #c7c7c7;
 }
 
 /* main styling begins */
@@ -78,6 +83,15 @@ header.my-header .links {
 	header.my-header .links a:hover i {
 		top: -5px;
 	}
+
+.my-photo {
+	width: 70%;
+}
+
+#awards .list-group-item {
+	background-color: transparent;
+	font-size: 0.9rem;
+}
 
 .my-projects {
 	max-width: 80%;
@@ -192,6 +206,10 @@ header.my-header .links {
 
 	article.project button.expand {
 		font-size: 1.5rem;
+	}
+
+	.my-photo {
+		width: 40%;
 	}
 }
 

@@ -44,13 +44,21 @@
 		</header>
 
 		<section class="row my-about py-4">
-			<div class="col-md-4 text-center mb-4 mb-md-0">
-				<img src="{{site.images_location}}/me.jpeg" class="rounded w-50 mw-100" alt="Photograph of Dhruv Agarwal">
+			<div class="col-md-2 text-center mb-4 mb-md-0">
+				<img src="{{site.images_location}}/me.jpeg" class="rounded mw-100 my-photo" alt="Photograph of Dhruv Agarwal">
 			</div>
 			<div class="col-md-8">
-				<div class="pe-md-5">
+				<div class="aboutme-text">
 					{% include aboutme.html %}
 				</div>
+			</div>
+			<div class="col-md-2 mt-4 mt-md-0" id="awards">
+				<h5 class="text-center">Awards & Recognition</h5>
+				<ul class="list-group list-group-flush mx-5 mx-md-0">
+					{% for award in site.data.awards %}
+					<li class="list-group-item px-1">{{ award }}</li>
+					{% endfor %}
+				</ul>
 			</div>
 		</section>
 

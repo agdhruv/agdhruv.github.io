@@ -13,7 +13,7 @@
                 <p class="card-text text-muted m-0">
                     {{ paper.venue }}
                     {% if paper.award %}
-                        | <span class="text-danger">{{ paper.award }}</span>
+                        | <span class="text-danger fw-bold">{{ paper.award }}</span>
                     {% endif %}
                 </p>
                 <p class="card-text m-0">
@@ -24,6 +24,7 @@
                         </small>
                     {% endfor %}
                 </p>
+                <hr>
             </div>
         </div>
     </div>
