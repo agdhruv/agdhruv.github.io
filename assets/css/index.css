@@ -25,7 +25,7 @@ body {
 	margin: var(--margin-window-size);
 }
 
-h1, h5 {
+h1, h5, h4 {
 	font-family: var(--font-raleway);
 }
 
@@ -90,7 +90,7 @@ header.my-header .links {
 
 #awards .list-group-item {
 	background-color: transparent;
-	font-size: 0.9rem;
+	font-size: 1rem;
 }
 
 .my-projects {
