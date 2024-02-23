@@ -94,7 +94,6 @@ header.my-header .links {
 }
 
 .my-projects {
-	max-width: 80%;
 	margin: 0px auto;
 
 	display: grid;
@@ -190,16 +189,9 @@ header.my-header .links {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 967px) {
-	.my-projects {
-		max-width: 90%;
-	}
-}
-
 @media screen and (max-width: 767px) {
 
 	.my-projects {
-		max-width: 70%;
 		grid-template-columns: 1fr;
 		grid-gap: 0.6rem 0rem;
 	}
@@ -214,9 +206,6 @@ header.my-header .links {
 }
 
 @media screen and (max-width: 499px) {
-	.my-projects {
-		max-width: 90%;
-	}
 
 	html {
 		font-size: 14px;

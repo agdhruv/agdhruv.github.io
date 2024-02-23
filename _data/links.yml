@@ -17,3 +17,7 @@
 - title: Google Scholar
   href: https://scholar.google.com/citations?user=aLAvTzUAAAAJ&hl=en
   fontawesome_class: fas fa-graduation-cap
+
+- title: Medium
+  href: https://medium.com/@agdhruv
+  fontawesome_class: fab fa-medium-m
