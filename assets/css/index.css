@@ -180,12 +180,6 @@ header.my-header .links {
 				color: red;
 			}
 
-/* define selection color */
-
-::selection {
-    background: #e8e8e8;
-}
-
 
 /* MEDIA QUERIES */
 
