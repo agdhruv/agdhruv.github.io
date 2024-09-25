@@ -6,18 +6,18 @@
   href: https://www.linkedin.com/in/agdhruv/
   fontawesome_class: fab fa-linkedin-in
 
+- title: Medium
+  href: https://medium.com/@agdhruv
+  fontawesome_class: fab fa-medium-m
+
 - title: Email
   href: mailto:dhruv@infosci.cornell.edu
   fontawesome_class: far fa-envelope
 
 - title: Resume
   href: files/Dhruv_Agarwal_Resume.pdf
-  fontawesome_class: far fa-file-pdf
+  text_icon: CV
 
 - title: Google Scholar
   href: https://scholar.google.com/citations?user=aLAvTzUAAAAJ&hl=en
   fontawesome_class: fas fa-graduation-cap
-
-- title: Medium
-  href: https://medium.com/@agdhruv
-  fontawesome_class: fab fa-medium-m
