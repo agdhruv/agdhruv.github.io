@@ -1,0 +1,141 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{site.images_location}}/favicon.png">
+	<title>Dhruv Agarwal | Home</title>
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/modern.css">
+
+	{% include google_analytics.html %}
+	{% seo %}
+</head>
+
+<body class="light-mode">
+	<div class="mode-toggle">
+		<i class="fas fa-moon"></i>
+	</div>
+
+	<section class="hero-about-section">
+		<div class="container">
+			<div class="row">
+				<!-- Left column: Hero section with photo, name, and social links -->
+				<div class="col-lg-4 col-md-5">
+					<div class="hero-content">
+						<div class="profile-container">
+							<img src="{{site.images_location}}/me.jpg" class="profile-image" alt="Dhruv Agarwal">
+						</div>
+						<h1 class="display-name">Dhruv Agarwal</h1>
+						<!-- Lead text removed as it's redundant with about me section -->
+						<div class="social-links">
+							{% for link in site.data.links %}
+							<a href="{{ link.href }}" title="{{ link.title }}" target="_blank">
+								{% if link.fontawesome_class %}
+								<i class="{{ link.fontawesome_class }}"></i>
+								{% else %}
+								<span class="text-icon">{{ link.text_icon }}</span>
+								{% endif %}
+							</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<!-- Right column: About Me content -->
+				<div class="col-lg-8 col-md-7">
+					<div class="about-content">
+						{% include aboutme.html %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="publications" class="section publications-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Publications</h2>
+				<div class="underline"></div>
+			</div>
+			<div class="publications-container">
+				{% for paper in site.papers reversed %}
+				<div class="publication-card">
+					<div class="publication-content">
+						<h3 class="publication-title">{{ paper.title }}</h3>
+						<p class="publication-authors">{{ paper.authors | join: ", " }}</p>
+						<div class="publication-meta">
+							<span class="venue">{{ paper.venue }}</span>
+							{% if paper.papertype %}
+							<span class="publication-type">{{ paper.papertype }}</span>
+							{% endif %}
+							{% if paper.award %}
+							<span class="publication-award">{{ paper.award }}</span>
+							{% endif %}
+						</div>
+						<div class="publication-links">
+							{% for link in paper.links %}
+							<a href="{{ link[1] }}" target="_blank">{{ link[0] }}</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<section id="projects" class="section projects-section">
+		<div class="container">
+			<div class="section-title">
+				<h2>Past Projects</h2>
+				<div class="underline"></div>
+			</div>
+			<div class="projects-grid">
+				{% assign projects = site.data.projects | where:"display", true %}
+				{% for project in projects %}
+				<div class="project-card">
+					<div class="project-thumbnail" style="background-image: url({{site.images_location}}/{{project.thumbnail}})">
+					</div>
+					<div class="project-content">
+						<h3 class="project-title">{{ project.name }}</h3>
+						<p class="project-stack">{{ project.keywords }}</p>
+						<p class="project-description truncate">{{ project.description }}</p>
+						<button class="expand-btn">
+							<i class="fas fa-plus-circle"></i> Read More
+						</button>
+						{% if project.link %}
+						<a href="{{ project.link }}" class="project-link" target="_blank">
+							<i class="fas fa-external-link-alt"></i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/modern.js"></script>
+</body>
+
+</html>
