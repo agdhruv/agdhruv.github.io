@@ -12,7 +12,7 @@
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   --transition: all 0.2s ease;
   --border-radius: 8px;
-  --font-heading: 'Playfair Display', serif;
+  --font-heading: 'Source Serif 4', serif;
   --font-body: 'Inter', sans-serif;
 }
 
@@ -219,7 +219,7 @@ social-links a:hover {
 
 .about-content p {
   margin-bottom: 0.7rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
