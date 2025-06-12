@@ -285,15 +285,13 @@ body.dark-mode .publications-section {
 }
 
 .publication-card {
-  background-color: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 20px;
-  border-left: 3px solid var(--primary);
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 body.dark-mode .publication-card {
-  background-color: #222;
+  border-bottom: 1px solid #383838;
 }
 
 .publication-title {
@@ -326,7 +324,11 @@ body.dark-mode .publication-authors {
 
 .publication-meta .venue {
   font-size: 0.9rem;
-  color: var(--gray);
+  color: #777;
+}
+
+body.dark-mode .publication-meta .venue {
+  color: #bbb;
 }
 
 .publication-type {
@@ -342,13 +344,25 @@ body.dark-mode .publication-type {
   color: #ddd;
 }
 
-.publication-award {
-  background-color: #f8d7da;
+.publication-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.publication-tags .tag {
+  background-color: var(--primary);
+  color: white;
   padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: #721c24;
+  border-radius: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
+}
+
+body.dark-mode .publication-tags .tag {
+  background-color: var(--primary);
+  color: white;
 }
 
 .publication-links {

@@ -85,8 +85,12 @@
 							{% if paper.papertype %}
 							<span class="publication-type">{{ paper.papertype }}</span>
 							{% endif %}
-							{% if paper.award %}
-							<span class="publication-award">{{ paper.award }}</span>
+							{% if paper.tags %}
+							<div class="publication-tags">
+								{% for tag in paper.tags %}
+								<span class="tag">{{ tag }}</span>
+								{% endfor %}
+							</div>
 							{% endif %}
 						</div>
 						<div class="publication-links">

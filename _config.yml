@@ -11,7 +11,7 @@ images_location: /assets/img
 # --- SEO ---
 
 tagline: Personal website of Dhruv Agarwal
-description: "Dhruv Agarwal is a researcher interested in Human-Computer Interaction and ICT & Development (ICTD). He is a PhD student at Cornell University."
+description: "Dhruv Agarwal is a researcher working in NLP and Human-AI Interaction. He is a PhD student at Cornell University."
 logo: &logo /assets/img/logo.png
 
 # Logo is weird, needs to be set as a site-wide default
