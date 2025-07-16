@@ -149,7 +149,7 @@ article.project p.description {
 	margin-top: 0.4rem;
 	font-weight: 300;
 	padding: 0 0.5rem;
-	text-align: justify;
+	text-align: start;
 }
 
 article.project p.description.get-ellipsis {

@@ -90,7 +90,11 @@
 				{% for project in projects %}
 				<article class="project" data-project-no="{{ forloop.index }}">
 
-					{% capture thumbnail_path %}{{site.images_location}}/{{project.thumbnail}}{% endcapture %}
+					{% if project.thumbnail contains 'https://' %}
+						{% capture thumbnail_path %}{{project.thumbnail}}{% endcapture %}
+					{% else %}
+						{% capture thumbnail_path %}{{site.images_location}}/{{project.thumbnail}}{% endcapture %}
+					{% endif %}
 					<h2 class="thumbnail" style="background-image: url({{ thumbnail_path }})"></h2>
 
 
