@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Hub - AI Agent Management Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            transition: background 0.5s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Facade styles */
+        .facade {
+            background: #0b0f1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facade::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .facade::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -15%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(ellipse, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .facade-content {
+            max-width: 640px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 14px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.35), 0 0 0 1px rgba(255,255,255,0.06);
+            animation: fadeSlideIn 0.6s ease both;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.035em;
+            background: linear-gradient(to right, #fff 30%, rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeSlideIn 0.6s ease 0.1s both;
+        }
+
+        .byline {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 2.25rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            animation: fadeSlideIn 0.6s ease 0.2s both;
+        }
+
+        .features {
+            display: grid;
+            gap: 0.625rem;
+            margin-bottom: 2.25rem;
+            text-align: left;
+            animation: fadeSlideIn 0.6s ease 0.3s both;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .feature-icon.dashboard {
+            background: rgba(99, 102, 241, 0.15);
+            color: #818cf8;
+        }
+
+        .feature-icon.monitoring {
+            background: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+        }
+
+        .feature-icon.security {
+            background: rgba(251, 191, 36, 0.12);
+            color: #fbbf24;
+        }
+
+        .feature-text h3 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.92);
+            letter-spacing: -0.01em;
+        }
+
+        .feature-text p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.5;
+        }
+
+        .signin-wrapper {
+            animation: fadeSlideIn 0.6s ease 0.4s both;
+        }
+
+        .google-signin-btn {
+            background: white;
+            color: #1a1a2e;
+            border: none;
+            padding: 0.875rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: inherit;
+            border-radius: 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255,255,255,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .google-signin-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.12);
+        }
+
+        .google-signin-btn:active {
+            transform: translateY(0);
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .signin-note {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: -0.01em;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loader styles */
+        .loader-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #0b0f1a;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.08);
+            border-top-color: rgba(99, 102, 241, 0.8);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Valentine reveal styles */
+        .valentine-reveal {
+            display: none;
+            background: linear-gradient(135deg, #ffccd5 0%, #ffeef1 100%);
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .valentine-content {
+            max-width: 650px;
+            text-align: center;
+            background: white;
+            padding: 3.5rem 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 135, 0.2);
+            border: 3px solid #ffb3c1;
+        }
+
+        .heart {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20% { transform: scale(0.95); }
+        }
+
+        .valentine-content h2 {
+            font-size: 2.5rem;
+            color: #d63384;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .valentine-content p {
+            font-size: 1.15rem;
+            color: #6c757d;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .communication-note {
+            background: #fff5f7;
+            border-left: 4px solid #ff6b9d;
+            padding: 1.25rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive design */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .byline {
+                font-size: 1rem;
+            }
+
+            .feature {
+                padding: 1rem 1.15rem;
+                gap: 0.85rem;
+            }
+
+            .feature-icon {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+            }
+
+            .valentine-content {
+                padding: 2.5rem 1.75rem;
+            }
+
+            .valentine-content h2 {
+                font-size: 2rem;
+            }
+
+            .heart {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Facade -->
+    <div class="facade" id="facade">
+        <div class="facade-content">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <h1>Agent Hub</h1>
+            <p class="byline">A unified platform for all your AI agents</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon dashboard">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="9" rx="1"/>
+                            <rect x="14" y="3" width="7" height="5" rx="1"/>
+                            <rect x="14" y="12" width="7" height="9" rx="1"/>
+                            <rect x="3" y="16" width="7" height="5" rx="1"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Unified Dashboard</h3>
+                        <p>Manage all your AI agents from one central location</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon monitoring">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Real-time Monitoring</h3>
+                        <p>Track performance and optimize your agent workflows</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon security">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Enterprise Security</h3>
+                        <p>Bank-level encryption and compliance ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="signin-wrapper">
+                <button class="google-signin-btn" id="signinBtn">
+                    <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Sign in with Google
+                </button>
+                <p class="signin-note">Secure authentication via Google OAuth 2.0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Valentine Reveal -->
+    <div class="valentine-reveal" id="valentineReveal">
+        <div class="valentine-content">
+            <div class="heart">💖</div>
+            <h2>Will you be my Valentine for 2026?</h2>
+            <p><b>After you've thought about what that means to you</b>, please reply using official Pb&Co communication channels.</p>
+            <div class="communication-note">
+                📮 Official Pb&Co channels accepted:<br>
+                • Traditional mail correspondence<br>
+                • Carrier pigeons (trained only)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signinBtn = document.getElementById('signinBtn');
+        const facade = document.getElementById('facade');
+        const loader = document.getElementById('loader');
+        const valentineReveal = document.getElementById('valentineReveal');
+
+        signinBtn.addEventListener('click', () => {
+            // Hide facade
+            facade.style.display = 'none';
+            
+            // Show loader
+            loader.style.display = 'flex';
+            
+            // After 2 seconds, hide loader and show valentine reveal
+            setTimeout(() => {
+                loader.style.display = 'none';
+                valentineReveal.style.display = 'flex';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
