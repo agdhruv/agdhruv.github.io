@@ -1,0 +1,67 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    color: #292929;
+    font-family: var(--font-lato);
+    line-height: 1.6;
+}
+
+main {
+    max-width: 34rem;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.home-link {
+    font-size: 0.9rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+h1 {
+    margin: 2rem 0 0.25rem;
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.intro {
+    margin: 0 0 2rem;
+    color: #626262;
+}
+
+.flavors {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.flavors li {
+    margin-bottom: 0.85rem;
+    font-size: 1.125em;
+}
+
+.featured-star {
+    font-size: 0.75em;
+}
+
+.note {
+    color: #626262;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 2rem auto;
+    }
+}

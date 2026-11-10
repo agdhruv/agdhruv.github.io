@@ -1,0 +1,23 @@
+- name: Orange fennel
+  note: From the <a href="https://www.malai.co/cookbook">Malai cookbook</a>
+  featured: true
+- name: Chocolate wasabi
+  featured: true
+  note: crazy flavor, but surprisingly good!
+- name: Mango
+  note: with chopped strawberry topping
+- name: Black sesame
+  featured: true
+- name: Matcha
+- name: Masala chai
+  note: with chocolate-covered cardamom seeds topping
+- name: Coconut
+  note: with pineapple topping (piña colada inspired)
+- name: Coffee
+- name: Chocolate peanut butter
+- name: Raspberry swirl
+- name: Rasmalai ice cream
+- name: Kheer ice cream
+- name: Pistachio ice cream
+- name: Avocado lime
+- name: Rose and salted almond
